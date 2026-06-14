@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>The Golf Journal — From then to now</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,9 +26,9 @@
 /* ---- THE WALKING RECORD (milestones, oldest first) ----
    mark / markType are optional. markType: 'hcp' | 'score' | 'diff'  */
 const TIMELINE = [
-  { date:'Jul 2024', mo:'07 / 24', title:'Signed up for Future Golf', detail:' My quiet decision to find a new sport, one I hope to enjoy for the rest of my life.', course:'Melbourne · VIC', kind:'start' },
+  { date:'Jul 2024', mo:'07 / 24', title:'Signed up for Future Golf', detail:' After retiring from Ice Hockey, this was my quiet decision to find a new sport, one I hope to enjoy for the rest of my life.', course:'Melbourne · VIC', kind:'start' },
   { date:'Aug 2024', mo:'08 / 24', title:'First round submitted to GA', detail:'On the board, the first of 20 before an official handicap.', course:'Settlers Run GC', kind:'milestone' },
-  { date:'Aug 2024', mo:'08 / 24', title:'My first coach - Gonzalo', detail:'Paying for knowledge instead of guessing on YouTube. He built me a really solid fundation I am grateful of. ', course:'Golfec · Melbourne', kind:'coach' },
+  { date:'Aug 2024', mo:'08 / 24', title:'My first coach - Gonzalo', detail:'Paying for knowledge instead of guessing on YouTube. He built me a really solid fundation I am grateful of. ', course:'Golftec · Melbourne', kind:'coach' },
   { date:'Sep 2024', mo:'09 / 24', title:'Handicap under 30', detail:'48 points off 35 at Yering Meadows —  a fresh 26.0.', course:'Yering Meadows GC · Nursery', mark:'26.0', markType:'hcp' },
   { date:'Nov 2024', mo:'11 / 24', title:'Handicap under 20', detail:'35 points off 23 at PK South — a new 19.1.', course:'Penninsula Kingswood · South', mark:'19.1', markType:'hcp' },
   { date:'Feb 2025', mo:'02 / 25', title:'Moved to the Gold Coast', detail:'After graduating university, chasing a motorsport career — the clubs came too.', course:'Gold Coast · QLD', kind:'life' },
@@ -45,39 +46,95 @@ const TIMELINE = [
    feel / result  1–5      ·   **double stars** = bold      ·   placeholder:true = “example” card */
 const ENTRIES = [
 
-  { date:'2026-05-09', title:'Driver — finally found the pocket', club:'Driver',
-    cue:'Pause at the top, let it fall', feel:4, result:4,
-    youtube:'https://youtu.be/aqz-KE-bpKQ',   // ← demo link — swap for your own swing
-    body:`First time the driver felt like a friend instead of an opponent. The pause gives my body the half-second it needs to sequence — hips, torso, arms, club. **The pause isn’t a position to hold, it’s a willingness to wait.** I think that’s true of more than the driver.` },
+  { date:'2026-05-13', title:'Stable finish, clearing the hips', club:'7 Iron',
+    cue:'Sit back and turn on the left heel to open up the pocket to let the club come through', feel:4, result:4,
+    youtube:'https://youtube.com/shorts/Qt80QlC6yWA',   
+    body:`I had a tendency of stalling my hip rotation to help see and hit the ball, so my hands always had no room. After learning to rotate, my hips would thrust forward, the focus here was for me to sit back and make sure the rotation occurs in a way that opens up space for the arms to naturally flow through.` },
 
-  { date:'2026-05-04', title:'Range session — wedge distances', club:'56° & PW',
-    cue:'Clock face — 7:30 to 1:30', feel:3, result:3, youtube:'',
-    body:`Ninety minutes on partial wedges. Not glamorous, but it’s where I leak strokes. Backswing to 7:30, follow-through to 1:30, half tempo, full commitment — the 56° carries 70 yards basically every time. **Committing to it for a month.**` },
+  { date:'2026-05-17', title:'LESSON - Proper Driver Rotation', club:'Driver',
+    cue:'Use the core on the back swing, bump and turn, rotate through impact', feel:5, result:2, 
+    youtube:'https://youtube.com/shorts/Fizky2CwEfk',
+    body:`In search of a consistent repeatible driver swing, this lesson connected my iron swing to my driver, looking to gain more control and consistency by using more hips and engage less of my hands in the swing.` },
 
-  { date:'2026-04-28', title:'Brookwater — back nine breakthrough', club:'All',
-    cue:'Pick the shot, hit the shot, walk on', feel:4, result:3, youtube:'',
-    body:`Front nine was a slow-motion car crash — 48. The back nine was 42. Same swing, same body, different mind. One rule on the back: **pick the shot, hit the shot, walk on.** No post-mortems. The shots got worse before they got better — then they got better.` },
+  { date:'2026-05-05', title:'Working on the Driver', club:'Driver',
+    cue:'Keep the driver in front of the body, let the hands come through at impact', feel:4, result:4, 
+    youtube:'https://youtube.com/shorts/Y6mx4v2dpi8',
+    body:`Struggling with a over fade shot and often can't find the right consistency in the swing. Keep it in front to simplify everything and reduce shaft lean by thinking more acceleration of the clubs and stalling the hands.` },
 
-  { date:'2026-04-22', title:'7 iron — turning the ball over', club:'7 iron',
-    cue:'Right shoulder down, not around', feel:4, result:4, youtube:'',
-    body:`First time I’ve hit a controlled draw on demand. The feel was the right shoulder working **down** through the ball instead of spinning around. Held its line into the wind. Small thing — but it’s the shot I’ve wanted for two years.` },
+  { date:'2026-04-06', title:'Controlled Hip Dominant Swing', club:'7 iron',
+    cue:'Hinge, Rotate more and Lift left hip at impact ', feel:5, result:5, 
+    youtube:'https://youtube.com/shorts/w9thfFZxWJQ',
+    body:`This is the most complete my swing has felt after transitioning from a hand dominant to a hip dominant swing, I feel it is now leading the way and driving my swing together. I feel the wind up, the bump at the top, the rotation through and the final lift at impact as I send my hands out. It is showing on the course too.` },
 
-  /* ---- examples below — replace with your real 2024 / 2025 entries ---- */
-  { date:'2025-08-10', title:'Settling in at Heritage', cue:'Pick the number, trust the number',
-    feel:3, result:3, youtube:'', placeholder:true,
-    body:`[Replace with a mid-2025 session — what Heritage was teaching you.]` },
+  { date:'2026-03-01', title:'LESSON - Hinge and Rotate Fully', club:'7 iron',
+    cue:'Hinge more at the hips, rotate more than you think ', feel:5, result:3, 
+    youtube:'https://youtube.com/shorts/joiKJuLA6wg',
+    body:`I need to hinge instead of rounding my back, when I think push against the wall I naturally get to the depth that I want I don't need to think depth and width anymore. Meanwhile coming down, I need to over exaggerate the hip rotation and be comfortable with the club being further behind my body. I learnt that I need to see my left bum at P6, this is much more rotation that what I had previously.` },
 
-  { date:'2025-03-15', title:'A fresh start on the Coast', cue:'Rebuild the takeaway',
-    feel:2, result:2, youtube:'', placeholder:true,
-    body:`[Replace with the swing thought you carried into the move — new coach, new course, new patterns.]` },
+  { date:'2026-02-24', title:'Clearing Hips with Extended Clubs', club:'7 iron',
+    cue:'Push agains the wall on back swing, clear hips at impact', feel:4, result:4, 
+    youtube:'https://youtube.com/shorts/4zVE2D4ZT1w',
+    body:`This is the most natural I have felt clearing my hips, with the longer clubs I don't need to hunch as much. Everything feels well connected, I feel stable and wide in the back swing, the clearing of the hips is now at the right tempo, not too early and not too late. Currently I feel my right shoulder has this weird action on the downswing. Other than that swing feels great, still working on that impact concept of lifting my left hip and follow through.` },
 
-  { date:'2024-11-20', title:'Chasing under 20', cue:'Smooth, not hard',
-    feel:3, result:3, youtube:'', placeholder:true,
-    body:`[Replace with a real entry from late 2024 — the swing feel that took you from 26 to 19.1.]` },
+  { date:'2025-11-08', title:'LESSON - New Coach New concepts & Longer Irons', club:'7 iron',
+    cue:'Push against the wall on back swing, turn hips through impact. Also: I need to be fitted for longer clubs.', feel:5, result:1, 
+    youtube:'https://youtube.com/shorts/ELyv_-MQokg',
+    body:`Working with a new coach recommended for her knowledge in biomechanics, I have been having some knee and hip pains swinging quite aggressively. This lesson was dense and mind blowing, the back swing thought of pushing out against the wall gave me great control and width. At impact I would always stall my hips, it turns out that there is a lift of the left hip, this completes the swing much more naturally!` },
 
-  { date:'2024-09-12', title:'First taste of real contact', cue:'Low point after the ball',
-    feel:2, result:3, youtube:'', placeholder:true,
-    body:`[Your swing thought from this session — what you were chasing, what finally clicked, what fell apart.]` },
+  { date:'2025-10-28', title:'Everything in front', club:'8 iron',
+    cue:'Lag to compress, everything in front', feel:5, result:5, 
+    youtube:'https://youtube.com/shorts/s4i0ORMECZo',
+    body:`After multiple rounds the shallowing just made my swing feel very unstable at the top, so now just focusing on a nice soft grip to lag naturally and compress the ball. The strikes are much more natural and I can fully swing through the ball. The sounds are so different.` },
+
+  { date:'2025-09-04', title:'LESSON - Lag to Compress ', club:'',
+    cue:'Soft hands at the top, hip and hands go whilst club stays back. No need to accelerate the hands', feel:4, result:1, 
+    youtube:'https://youtube.com/shorts/Ose00knqL28',
+    body:`I finally understand where true compression comes from, it is the hips and hands moving whilst the club still stays behind you. I don't need to force it there I just need to relax my hands at the top and like a pendulum it will lag! That is really mind blowing and I look forward to piecing all that into my swing.` },
+
+  { date:'2025-08-08', title:'Shallow and Compress', club:'8 iron',
+    cue:'Get hands in front of the chest at P5, Left knee disappear by P6', feel:2, result:2, 
+    youtube:'https://youtube.com/shorts/DZpbTYRA4X8',
+    body:`Finally able to get the hands to wait and shallow, but the swing doesn't feel very repeatable. The continous swing changes is also affecting how I am playing out on the course. I think too much and have a lot of swing thoughts in my head right now.` },
+
+  { date:'2025-07-24', title:'LESSON - Tuning P5 P6 Position', club:'9 iron',
+    cue:'Get hands in front of the chest at P5, Left knee disappear by P6', feel:4, result:1, 
+    youtube:'https://youtube.com/shorts/-1QrjNqp7Yk',
+    body:`Getting the hands out in front of my chest gives me more room as I work down my swing, and by P6 club parallel to the ground from behind I should not see my left knee. This visual helps me check that I am rotating my hips enough in the downswing. Feels more spacious, the impact is still a work in progress.` },
+
+  { date:'2025-07-05', title:'Failing to add Compression', club:'7 iron',
+    cue:'Hold the club off for more compression', feel:2, result:3, 
+    youtube:'https://youtube.com/shorts/AIuA0H8o6ds',
+    body:`Trying to combine the shallowing with the compression but the main challenge here is not attacking the ball. If I don't attack, the ball flies right, when I attack then I lose the shallow component. I need another lesson there's something missing here. ` },
+
+  { date:'2025-05-24', title:'Shallowing with my Hands', club:'7 iron', 
+    cue:'Feeling the club drop and then turn, instead of firing right at the ball', feel:2, result:4, 
+    youtube:'https://youtube.com/shorts/YpFd8xVhG1c',
+    body:`I see a lot of pros with this shallower shaft plane on the down swing but I feel that I am forcing it with my hands still, something feels off but the ball flight does seem to still work. Clearing my hips much better on the downswing, nice and early.` },
+
+  { date:'2025-05-01', title:'LESSON - Shallowing', club:'9 iron', 
+    cue:'Feeling the club drop and then turn, instead of firing right at the ball', feel:2, result:1, 
+    youtube:'https://youtube.com/shorts/4Rtqp7khnpo',
+    body:`Currently accelerating straight at the ball to hit it at the top of the swing, causing a very steep plane. Learning to drop and delay the release for a shallower plane. Feels very new and hence weird. Need to do a lot of block practice to drill in this new motion.` },
+
+  { date:'2025-04-22', title:'Rare good drive', club:'Driver', 
+    cue:'Wide arc and less wrist action', feel:4, result:5, 
+    youtube:'https://youtube.com/shorts/nAr2ik7IhdA',
+    body:`My Driver is flying everywhere, it is the achilles heel in my game right now. It feels like too many things can and do go wrong, I need a lesson to focus on it.` },
+  
+  { date:'2025-03-19', title:'Smooth Tempo', club:'8 iron', 
+    cue:'Smooth Up and Down, One and Two', feel:5, result:4, 
+    youtube:'https://youtube.com/shorts/b8SdypJ1-NM',
+    body:`First session after moving to the Gold Coast. Working on a repeatable tempo to improve consistency, keeping the swing simple to help improve my low point contact and strike.`},
+
+  { date:'2024-11-12', title:'Par 3 During FG Comp', club:'9 iron', 
+    cue:'Relax and swing your swing', feel:4, result:5, 
+    youtube:'https://youtube.com/shorts/x2etIVaofdM',
+    body:`The practice is showing on the course, I am starting to have distances I can trust and swing it out on the course, very exciting!. Quite enjoying the Future Golf Competition environemnt, meeting new people and enjoying the game.` },
+
+  { date:'2024-10-12', title:'First Nice Long Iron', club:'5 iron', 
+    cue:'Low point after the ball', feel:4, result:3, 
+    youtube:'https://youtube.com/shorts/z2Io5rEUAGI',
+    body:`Longer club so it's harder for consistent contact, I am placing the ball further away and finding a nice pop in my irons finally. Thinking open hips on the back swing.` },
 
 ];
 
@@ -95,18 +152,17 @@ const LESSONS = [
 const COPY = {
   /* Hero text is edited directly in the <header class="hero"> block, further down — not here. */
   // Swing videos for the Then / Now panels — paste a YouTube link or leave ""
-  thenVideo: '',
-  nowVideo:  'https://youtu.be/aqz-KE-bpKQ',   // ← demo link — swap for your own swing
+  thenVideo: 'https://youtube.com/shorts/BoPqBk770QM',
+  nowVideo:  'https://youtube.com/shorts/Qt80QlC6yWA',   // ← demo link — swap for your own swing
   // anchors for the swing section
   thenThoughts: [
-    'I thought golf was about hitting it as hard as I could.',
-    'I aimed at the pin, every single time.',
-    'No plan for the miss — because I didn’t know I had one.',
+    'I thought golf was about swinging my arms at the ball as quick as I could',
+    'Little idea about the right set up or grip',
+    'Treating it like a hockey slap shot.',
   ],
   nowThoughts: [
-    'I think in dispersion, not distance.',
-    'Pick the shot, commit to it, walk on.',
-    'I miss in the right places now — on purpose.',
+    'I think flow and control, not distance.',
+    'Rotation to open space, not throw my arms at the ball',
   ],
   closingTitle: 'The card’s still open',
   closing: [
@@ -251,7 +307,6 @@ const COPY = {
   .yeartabs button .n{ font-size:9px; color:var(--khaki); }
   .ygrid{ display:grid; grid-template-columns:1fr 1fr; gap:30px 36px; }
   @media(max-width:640px){ .ygrid{ grid-template-columns:1fr; } }
-  .ecard{ }
   .ecard .ethumb{ position:relative; aspect-ratio:16/10; overflow:hidden; margin-bottom:14px; border:1px solid var(--rule);
     background:repeating-linear-gradient(135deg, rgba(46,74,44,0.07) 0 2px, transparent 2px 11px), var(--linen); display:flex; align-items:center; justify-content:center; }
   .ecard .ethumb .play{ width:40px; height:40px; }
@@ -322,11 +377,10 @@ const COPY = {
 <a id="top"></a>
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow reveal">JEFF HU</span>
-    <h1 class="hero-big reveal" id="hero-lead">The Golf Journal</h1>
-    <p class="lede reveal" id="hero-rest">— the swings I’m proud of, the  I’m not, and the lessons the great game of golf keeps handing.</p>
-    <p class="sig reveal" id="hero-sig">So much has changed in both my swing and my thoguhts about the game itself, 
-I want to capture everything this great game keeps giving me in one place through this Diary.</p>
+    <span class="eyebrow reveal">YOU MISS 100% OF THE SHOTS YOU DON'T TAKE - WAYNE GRETSKY</span>
+    <h1 class="hero-big reveal" id="hero-lead">Jeff's Golf Journal</h1>
+    <p class="lede reveal" id="hero-rest">— to document the journey of trading Hockey Sticks for Irons and Drivers, to share my golf journey and the life lessons it teaches me along the way.</p>
+    <p class="sig reveal" id="hero-sig">This sport is so different to any sport I've played before, every round feels like a simulation of life, I often find the way I approached golf reveals how I approach life. </p>
   </div>
   <div class="scrollcue"><span class="lbl">Scroll</span><span class="ln"></span></div>
 </header>
@@ -359,7 +413,6 @@ I want to capture everything this great game keeps giving me in one place throug
       <div class="swing-anchor reveal">
         <div class="frame dark" id="then-frame">
           <span class="tag">Before</span><span class="play"></span>
-          <span class="cap">Jul 2024 swing — driver, face-on</span>
         </div>
         <div class="anchor-body then">
           <span class="eyebrow" style="color:var(--leather)">The beginning · July 2024</span>
@@ -390,10 +443,9 @@ I want to capture everything this great game keeps giving me in one place throug
       <div class="swing-anchor reveal" style="margin-top:8px;">
         <div class="frame" id="now-frame">
           <span class="tag">Current</span><span class="play"></span>
-          <span class="cap">Jun 2026 swing — driver, face-on</span>
         </div>
         <div class="anchor-body now">
-          <span class="eyebrow" style="color:var(--fairway)">Where it stands · June 2026</span>
+          <span class="eyebrow" style="color:var(--fairway)">Where it stands · May 2026</span>
           <h3>Now</h3>
           <ul id="now-list"></ul>
         </div>
@@ -443,7 +495,7 @@ I want to capture everything this great game keeps giving me in one place throug
   function fmtDate(iso){ var p=String(iso).split('-'); if(p.length<3) return iso; var mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; return (+p[2])+' '+mo[(+p[1])-1]+' '+p[0]; }
 
   /* ---------- video lightbox ---------- */
-  function openVideo(id){ if(!id) return; document.getElementById('vboxFrame').innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0" title="Swing video" allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>'; document.getElementById('vbox').hidden=false; document.body.style.overflow='hidden'; }
+  function openVideo(id){ if(!id) return; document.getElementById('vboxFrame').innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="Swing video" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>'; document.getElementById('vbox').hidden=false; document.body.style.overflow='hidden'; }
   function closeVideo(){ document.getElementById('vboxFrame').innerHTML=''; document.getElementById('vbox').hidden=true; document.body.style.overflow=''; }
   window.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVideo(); });
 
