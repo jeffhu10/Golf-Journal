@@ -33,8 +33,8 @@
    but only local .mp4 videos can autoplay cleanly with no YouTube branding. */
 const HERO = [
   { photo:'images/hockey.jpg',                              caption:'My Last Hockey Game' },
-  { video:'videos/driver-2025.mov', poster:'images/driver-2025.jpg', caption:'Driver, a year ago' },
-  { video:'videos/driver-2026.mov', poster:'images/driver-2026.jpg', caption:'Driver, now' },
+  { video:'videos/driver-2025.mov', poster:'images/driver-2025.jpg', caption:'1 Year Ago' },
+  { video:'videos/driver-2026.mov', poster:'images/driver-2026.jpg', caption:'Now' },
 ];
 
 /* ---- PHOTOS (woven into the swing feed by date) ----
@@ -43,7 +43,6 @@ const HERO = [
    { date:'YYYY-MM-DD', caption:'...', photo:'images/your-file.jpg' }
    It slots into the right year automatically, in date order among your swings. */
 const PHOTOS = [
-  { date:'2026-05-10', caption:'Sunset session at the range', photo:'images/range-sunset.jpg' },
 ];
 
 /* ---- THE WALKING RECORD (milestones, oldest first) ----
@@ -163,12 +162,12 @@ const ENTRIES = [
 
 /* ---- THE ALMANAC (lessons) ---- */
 const LESSONS = [
-  { text:'Paying for knowledge saves you from looking for a needle in a haystack.', context:'A few lessons with the right coach were worth a season of YouTube.' },
-  { text:'Practice makes permanent, not perfect.', context:'Whatever you grooved on the range is what shows up under pressure.' },
-  { text:'The shot you committed to and missed beats the one you flinched on and pulled off.', context:'Conviction is a club. Hesitation is the absence of one.' },
-  { text:'Distance is a vanity metric. Dispersion is the real one.', context:'280m into the trees costs more than 240m in the fairway.' },
-  { text:'You’ll never feel ready enough. Just start, and play for results.', context:'' },
-  { text:'Focus on the Process, not the results. Accept mistakes.', context:'If your poor shot rate is 3%, you will mess up 3 out of 100 shots despite your best effects. You are imperfect.' },
+  { text:'Paying for knowledge saves you from looking for a needle in a haystack.', context:'YouTube leads me down 10 swing change options but your coach with their knowledge within the minute finds the change you need... it was the 11th.' },
+  { text:'Practice makes permanent, not perfect.', context:'How you drill on the range is what shows up under pressure. How you live your life day to day is how you show "up" in the big moments.' },
+  { text:'The shot you committed to and missed beats the one you flinched on and pulled off.', context:'100% Commitment should be in all of your shots, on and off the course.' },
+  { text:'Distance is a vanity metric. Dispersion is the real one.', context:'280m into the trees costs more than 240m in the fairway. You must account for failure and accept that you are imperfect. Mistakes happen and it will always happen.' },
+  { text:'You’ll never feel ready enough. There is always that next swing change that will "solve your game".', context:'Every challenge and task that you feel uneasy and stretched is a challenge worth taking head on, you will never feel truly ready.' },
+  { text:'Focus on the process, the results are not the product of your actions. Products cannot be controlled.', context:'You can only control your process, your habits and the way you approach the game, your results are the reflection of your actions plus some uncontrollable variables like luck. You cannot control results nor should you try to fixate on them.' },
 ];
 
 /* ---- HERO + CLOSING WORDS ---- */
@@ -187,12 +186,12 @@ const COPY = {
     'I think flow and control, not distance.',
     'Rotation to open space, not throw my arms at the ball',
   ],
-  closingTitle: 'The card’s still open',
+  closingTitle: 'The Journey Continues...',
   closing: [
-    'Two years ago I thought this would be the last sport I want to play. Now, I feel like this is a cheat code to life. Every game is like a simulation of life, your ups and downs… literally, how you recover, how you manage your emotions.',
-    'I’m only two years in, and I can already have this certainty that this sport is the one I wish to play for the rest of my life, to share with those around me and my future kids. This sport is like no other, and teaches you things no other sport can or does.',
+    'Two years ago I thought my competition days are over. Now, I feel like not only have I found that competitive feeling again, this sport is also a cheat code to life. Every game is like a simulation of life, your ups and downs… literally, how you recover, how you manage your emotions.',
+    'I’m only two years in, and I can already have this certainty that this sport is the one I wish to play for the rest of my life, to share with those around me and my future kids. This sport is truly like no other.',
   ],
-  closingSig: '— Keep walking, Keep teeing off.',
+  closingSig: '— Keep growing, Keep teeing off.',
 };
 /* =========================  END OF YOUR DATA  ========================= */
 </script>
@@ -259,7 +258,7 @@ const COPY = {
   .ethumb.photo::after{ content:''; position:absolute; inset:0; background:linear-gradient(rgba(0,0,0,0.04),rgba(0,0,0,0.28)); }
   .ethumb.photo .pbadge{ position:absolute; top:9px; left:9px; z-index:2; font-family:'DM Mono',monospace; font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fairway); background:rgba(245,240,228,0.92); padding:3px 6px; }
   .photo-card h4{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; }
-  .scrollcue{ position:absolute; bottom:30px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--khaki); }
+  .scrollcue{ display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--khaki); margin:46px 0 4px; }
   .scrollcue .ln{ width:1px; height:34px; background:linear-gradient(var(--khaki),transparent); }
   .scrollcue .lbl{ font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; }
   @media(max-height:680px){ .scrollcue{ display:none; } }
@@ -427,11 +426,11 @@ const COPY = {
   <div class="wrap">
     <div class="hero-copy center">
       <span class="eyebrow reveal">YOU MISS 100% OF THE SHOTS YOU DON'T TAKE - WAYNE GRETSKY</span>
-      <h1 class="hero-big reveal" id="hero-lead">Jeff's Golf Journal</h1>
+      <h1 class="hero-big reveal" id="hero-lead">The Golf Journal</h1>
       <p class="lede reveal" id="hero-rest">— One stick traded for fourteen clubs. This is where I track the journey, the swings, and what the great game of golf reveals about life.</p>
     </div>
     <div class="hero-tri reveal" id="heroStage" aria-label="Where it started, a year ago, and now"></div>
-    <p class="sig reveal hero-sig-c" id="hero-sig">This sport is so different to any sport I've played before, every round feels like a simulation of life, I often find the way I approached golf reveals how I approach life. </p>
+    <p class="sig reveal hero-sig-c" id="hero-sig">This sport is so different to any sport I've played before, every round feels like a simulation of life. I find the way I approach golf often reveals how I approach life. </p>
   </div>
   <div class="scrollcue"><span class="lbl">Scroll</span><span class="ln"></span></div>
 </header>
@@ -508,7 +507,7 @@ const COPY = {
   <section class="band" id="lessons">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">An almanac</span>
+        <span class="eyebrow">Life lessons</span>
         <h2>What golf keeps teaching me</h2>
         <p>Some of it’s about golf. Most of it isn’t.</p>
         <div class="crest"></div>
@@ -645,7 +644,7 @@ const COPY = {
     if(id){ el.classList.add('has-vid'); el.style.backgroundImage='url(https://img.youtube.com/vi/'+id+'/hqdefault.jpg)'; el.style.cursor='pointer'; el.setAttribute('role','button'); el.onclick=function(){ openVideo(id); }; }
   });
 
-  /* ---------- hero triptych (photo + autoplay-on-scroll videos) ---------- */
+  /* ---------- hero triptych (photo + sequenced videos) ---------- */
   (function(){
     var stage = document.getElementById('heroStage');
     if(!stage || typeof HERO==='undefined' || !HERO.length) return;
@@ -655,7 +654,7 @@ const COPY = {
       var cap = item.caption ? '<span class="hcap">'+esc(item.caption)+'</span>' : '';
       if(item.video){
         return '<div class="hero-tile" data-i="'+i+'">'+
-            '<video muted loop playsinline preload="metadata"'+(item.poster?' poster="'+item.poster+'"':'')+'><source src="'+item.video+'" type="video/mp4" /></video>'+
+            '<video muted playsinline preload="auto"'+(item.poster?' poster="'+item.poster+'"':'')+'><source src="'+item.video+'" type="video/mp4" /></video>'+
             '<button class="hmute" type="button" aria-label="Unmute">'+ICON_MUTE+'</button>'+ cap +
           '</div>';
       }
@@ -665,11 +664,33 @@ const COPY = {
           (src?'<img src="'+src+'" alt="'+esc(item.caption||'')+'" onerror="this.style.display=\'none\'" />':'')+ cap +
         '</div>';
     }).join('');
-    var vids = stage.querySelectorAll('video');
+
+    /* Play the driver clips one after another (year-ago, then now), then repeat. */
+    var vids = Array.prototype.slice.call(stage.querySelectorAll('video'));
+    var seq = 0, inView = false, started = false;
+    function playAt(i){
+      if(i<0 || i>=vids.length) return;
+      seq = i;
+      for(var j=0;j<vids.length;j++){ if(j!==i){ try{ vids[j].pause(); vids[j].currentTime=0; }catch(e){} } }
+      var v = vids[i];
+      try{ v.currentTime = 0; }catch(e){}
+      var p = v.play(); if(p && p.catch) p.catch(function(){});
+    }
+    vids.forEach(function(v, i){
+      v.addEventListener('ended', function(){ if(inView) playAt((i+1) % vids.length); });
+    });
+    function startSeq(){
+      if(!vids.length) return;
+      inView = true;
+      if(!started){ started = true; playAt(0); }
+      else { var v=vids[seq]; if(v){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); } }
+    }
+    function stopSeq(){ inView = false; var v=vids[seq]; if(v){ try{ v.pause(); }catch(e){} } }
     if('IntersectionObserver' in window){
-      var io = new IntersectionObserver(function(ents){ ents.forEach(function(en){ var v=en.target; if(en.isIntersecting){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); } else { v.pause(); } }); }, { threshold:0.5 });
-      vids.forEach(function(v){ io.observe(v); });
-    } else { vids.forEach(function(v){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }); }
+      var io = new IntersectionObserver(function(ents){ ents.forEach(function(en){ if(en.isIntersecting) startSeq(); else stopSeq(); }); }, { threshold:0.4 });
+      io.observe(stage);
+    } else { startSeq(); }
+
     stage.querySelectorAll('.hmute').forEach(function(btn){
       btn.addEventListener('click', function(e){
         e.stopPropagation();
